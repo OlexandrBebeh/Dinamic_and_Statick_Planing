@@ -26,7 +26,7 @@ Analysis of the properties of the bipartite graph shows that together with the m
 If in the connectivity matrix displaying a bivariate graph, one can select the zero submatrix and place it in the upper right corner and there is a condition a + b> = n, then the matrix symmetric to it must be zeroed out because the ones are conflicting values.
 First iteration: go through the row of the boolean matrix with min the sum of units. We change this row with the first row of the matrix. We find the sum of units by columns only for those where the first line is 1 and choose the maximum amount. This column is swapped with the first column.
 Cut off 1 row and the first column.
-We repeat the intonation.
+We repeat the iteration.
 
 ## Functions
 
