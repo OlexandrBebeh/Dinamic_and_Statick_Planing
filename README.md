@@ -6,25 +6,29 @@ Analysis of the properties of the bipartite graph shows that together with the m
     The localization of conflicting assignments is realized on the basis of the equivalent transformation of the initial graph, which is an isomorphic transformation, which consists in the target permutation of rows and columns of the connectivity matrix. In developing the algorithm, the following obvious statements were taken into account, which do not require proof.
 
 **Proposition 1**
+
    Since each line of the CU is a reflection of the possible distribution of resource requests, the change of two lines of the CU with memorization of the new location of the requests does not affect the qualitative characteristics of the CU and the initial graph.
 
 **Proposition 2**
+
   Since each column of the CU is a reflection of the claim for applications to capture this resource, the change of places of the two columns of the CU with memorization of the new location of resources does not affect the qualitative characteristics of the CU and the initial graph.
 
 **Theorem 3**
+
    If after the equivalent transformation of the CU it is possible to obtain the term rank of the CU equal to the rank of the CU, then all applications have destinations corresponding to "1" of the main diagonal and: a complete combination is found, one of the solutions to the problem of assigning applications
 
 **Theorem 4**
+
    If in the matrix MS [i, j], i = 1..N, j = 1..N we can select the submatrix MM [k, l], k = 1..T, l = (N-S + 1). .N, where S + T> N and MM = 0 (0 is the zero matrix), then the assignment problem does not have a complete solution.
 
-##Algoritm of changing matrix
+## Algoritm of changing matrix
 
 If in the connectivity matrix displaying a bivariate graph, one can select the zero submatrix and place it in the upper right corner and there is a condition a + b> = n, then the matrix symmetric to it must be zeroed out because the ones are conflicting values.
 First iteration: go through the row of the boolean matrix with min the sum of units. We change this row with the first row of the matrix. We find the sum of units by columns only for those where the first line is 1 and choose the maximum amount. This column is swapped with the first column.
 Cut off 1 row and the first column.
 We repeat the intonation.
 
-##Functions
+## Functions
 
 `int min_row(int**& m, int from)` – search for row where minimum sum of units, starting from the `from` row and return it's number.
  
