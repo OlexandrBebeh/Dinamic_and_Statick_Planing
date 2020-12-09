@@ -118,7 +118,7 @@ void replace(int**& m) {
         swap(col, i, c);
         swap_collumn(m, i, c);
     }
-    cout << "   ";
+    cout << "  ";
     for (int i = 0; i < _msize(m) / sizeof(int); i++) {
         cout << row[i] << " ";
     }
@@ -127,7 +127,7 @@ void replace(int**& m) {
     for (int i = 0; i < _msize(m) / sizeof(int); i++) {
         cout << col[i] << " ";
         for (int j = 0; j < _msize(m) / sizeof(int); j++) {
-            cout << m[i][j] << "  ";
+            cout << m[i][j] << " ";
         }
         cout << endl;
     }
@@ -180,9 +180,9 @@ void find_zero_matrix(int**& m) {
     }
     
     if (conflicts) {
-        cout << "Matrix has conflicts!";
+        cout << "Matrix has conflicts!\n";
 
-    }else  cout << "Matrix does not have conflicts!";
+    }else  cout << "Matrix does not have conflicts!\n";
 
 }
 
@@ -257,15 +257,33 @@ void test_2() {
             if (find_zero_matrix_short(mat))
                 d++;
         }
-        cout << d/100;
+        cout << n << "%=> " << d/100 << "||";
+
+    }
+    cout << endl;
+};
+
+void test_3() {
+    int size = 10;
+    for (int n = 10; n <= 30; n=n+5) {
+        for (int i = 0; i < 100; i++) {
+            int** mat = create_matrix(size, i);
+            replace_w(mat);
+            if (find_zero_matrix_short(mat))
+                cout << "1, ";
+            else cout << "0, ";
+
+        }
+
+        cout << endl;
         cout << endl;
     }
 };
 int main()
 {
-    test_0();
-
+    test_2();
     system("pause");
+
 }
 
 /*
